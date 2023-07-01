@@ -1,9 +1,17 @@
 sourceCompatibility = 17
 dependencies {
-    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.7'
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+}
+repositories {
+    mavenLocal()
+    mavenCentral()
+    gradlePluginPortal()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    google()
 }
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-sourceSets.main.java.srcDirs = [ "src/" ]
+sourceSets.main.java.srcDirs = ["src/"]
 
 eclipse.project.name = appName + "-core"
